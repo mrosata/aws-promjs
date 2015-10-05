@@ -6,6 +6,8 @@ AWS SDK wrapper which converts the standard AWS API Service methods into functio
 > - If AWS-PromJS doesn't support the Service object your using, just add the service object namespace into  `inc/aws-promjs.json` with an Array containing every method name, or create your own config file in project root `/aws-promjs.json`.
 > - If you don't want a promise returned from a specific method, add that method name to an Array under `exclude &lt;service-name&gt; in a config file.
 
+Right now only S3 returns promises, you can easily turn on other services. I will be updating with a service a day.
+
 ```js
 // Require 'aws-promjs' instead of 'aws-sdk'.
 var AWS = require('aws-promjs');

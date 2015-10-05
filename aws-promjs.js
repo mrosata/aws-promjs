@@ -7,6 +7,12 @@
  *     @author Michael Rosata
  *     @created 10/02/2015
  *     @license MIT
+ *     @desc     AWS SDK wrapper which has the standard AWS API Service
+ *               methods return a promise rather than take a callback.
+ *               The Service objects are decorated based off a list of
+ *               names in ./inc/aws-promjs.json and you may add to the
+ *               arrays of service methods or overwrite excluded methods
+ *               lists. See ./README.md for further instructions.
  */
 var fs = require('fs');
 
@@ -56,15 +62,12 @@ try {
   // suppress, no custom config @ /aws-promjs.json
 }
 
-console.log(serviceOptions)
-
 if (!serviceOptions || typeof serviceOptions !== "object") {
   // If there is no config then the program can't work. We could return AWS object, but
   // then this module is just dead weight, I'd rather throw out an error.
   throw new Error('aws-promjs has bad config. Check root directory of root project or aws-promjs for `aws-promjs.json`');
 }
 else {
-  //console.log(serviceOptions);
   // This is our AWS extension
   function AWSPromJs() {}
 

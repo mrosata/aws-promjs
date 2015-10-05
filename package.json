@@ -1,7 +1,7 @@
 {
   "name": "aws-promjs",
   "version": "0.1.0",
-  "description": "Decorates AWS SDK to use promises while maintaining exact same API in documentation. If a service hasn't been converted to promises then AWS PromJS will transparently return the original AWS service. JSON config file allows developlers to add/remove services. If a method isn't decorated to return a promise then add it in a aws-promjs.json file in your root. Also the developer may force original methods to be passed in the same way.",
+  "description": "Decorates AWS SDK to use promises while maintaining exact same API as read in aws docs. If a service hasn't been converted to return a promise or excluded then the aws-sdk service will be used instead.",
   "main": "aws-promjs.js",
   "scripts": {
     "test": "echo \"Warning: No tests created, I welcome any contributions of test code!\" && exit 1"
@@ -18,5 +18,14 @@
   "dependencies": {
     "aws-sdk": "^2.2.6",
     "bluebird": "^2.10.2"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mrosata/aws-promjs.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mrosata/aws-promjs/issues"
+  },
+  "homepage": "https://github.com/mrosata/aws-promjs#readme"
 }
