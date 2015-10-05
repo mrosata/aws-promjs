@@ -1,9 +1,105 @@
 {
   "services": {
+
+    "AutoScaling": ["attachInstances", "attachLoadBalancers", "completeLifecycleAction", "createAutoScalingGroup", "createLaunchConfiguration", "createOrUpdateTags", "deleteAutoScalingGroup", "deleteLaunchConfiguration", "deleteLifecycleHook", "deleteNotificationConfiguration", "deletePolicy", "deleteScheduledAction", "deleteTags", "describeAccountLimits", "describeAdjustmentTypes", "describeAutoScalingGroups", "describeAutoScalingInstances", "describeAutoScalingNotificationTypes", "describeLaunchConfigurations", "describeLifecycleHooks", "describeLifecycleHookTypes", "describeLoadBalancers", "describeMetricCollectionTypes", "describeNotificationConfigurations", "describePolicies", "describeScalingActivities", "describeScalingProcessTypes", "describeScheduledActions", "describeTags", "describeTerminationPolicyTypes", "detachInstances", "detachLoadBalancers", "disableMetricsCollection", "enableMetricsCollection", "enterStandby", "executePolicy", "exitStandby", "putLifecycleHook", "putNotificationConfiguration", "putScalingPolicy", "putScheduledUpdateGroupAction", "recordLifecycleActionHeartbeat", "resumeProcesses", "setDesiredCapacity", "setInstanceHealth", "suspendProcesses", "terminateInstanceInAutoScalingGroup", "updateAutoScalingGroup"],
+
+    "CloudFormation": ["cancelUpdateStack", "createStack", "deleteStack", "describeAccountLimits", "describeStackEvents", "describeStackResource", "describeStackResources", "describeStacks", "estimateTemplateCost", "getStackPolicy", "getTemplate", "getTemplateSummary", "listStackResources", "listStacks", "setStackPolicy", "signalResource", "updateStack", "validateTemplate"],
+
+    "CloudFront": ["createCloudFrontOriginAccessIdentity", "createDistribution", "createInvalidation", "createStreamingDistribution", "deleteCloudFrontOriginAccessIdentity", "deleteDistribution", "deleteStreamingDistribution", "getCloudFrontOriginAccessIdentity", "getCloudFrontOriginAccessIdentityConfig", "getDistribution", "getDistributionConfig", "getInvalidation", "getStreamingDistribution", "getStreamingDistributionConfig", "listCloudFrontOriginAccessIdentities", "listDistributions", "listInvalidations", "listStreamingDistributions", "setupRequestListeners", "updateDistribution", "updateStreamingDistribution", "waitFor"],
+
+    "CouldSearch": ["buildSuggesters", "createDomain", "defineAnalysisScheme", "defineExpression", "defineIndexField", "defineSuggester", "deleteAnalysisScheme", "deleteDomain", "deleteExpression", "deleteIndexField", "deleteSuggester", "describeAnalysisSchemes", "describeAvailabilityOptions", "describeDomains", "describeExpressions", "describeIndexFields", "describeScalingParameters", "describeServiceAccessPolicies", "describeSuggesters", "indexDocuments", "listDomainNames", "updateAvailabilityOptions", "updateScalingParameters", "updateServiceAccessPolicies"],
+
+    "CloudSearchDomain": ["search", "suggest", "uploadDocuments"],
+
+    "CloudWatch": ["deleteAlarms", "describeAlarmHistory", "describeAlarms", "describeAlarmsForMetric", "disableAlarmActions", "enableAlarmActions", "getMetricStatistics", "listMetrics", "putMetricAlarm", "putMetricData", "setAlarmState"],
+
+
+    "CloudWatchLogs": ["cancelExportTask","createExportTask","createLogGroup","createLogStream","deleteDestination","deleteLogGroup","deleteLogStream","deleteMetricFilter","deleteRetentionPolicy","deleteSubscriptionFilter","describeDestinations","describeExportTasks","describeLogGroups","describeLogStreams","describeMetricFilters","describeSubscriptionFilters","filterLogEvents","getLogEvents","putDestination","putDestinationPolicy","putLogEvents","putMetricFilter","putRetentionPolicy","putSubscriptionFilter","testMetricFilter"],
+
+    "CognitoIdentity": ["createIdentityPool","deleteIdentities","deleteIdentityPool","describeIdentity","describeIdentityPool","getCredentialsForIdentity","getId","getIdentityPoolRoles","getOpenIdToken","getOpenIdTokenForDeveloperIdentity","listIdentities","listIdentityPools","lookupDeveloperIdentity","mergeDeveloperIdentities","setIdentityPoolRoles","unlinkDeveloperIdentity","unlinkIdentity","updateIdentityPool"],
+
+    "CognitoSync": ["bulkPublish","deleteDataset","describeDataset","describeIdentityPoolUsage","describeIdentityUsage","getBulkPublishDetails","getCognitoEvents","getIdentityPoolConfiguration","listDatasets","listIdentityPoolUsage","listRecords","registerDevice","setCognitoEvents","setIdentityPoolConfiguration","subscribeToDataset","unsubscribeFromDataset","updateRecords"],
+
+    "DynamoDB": ["batchGetItem","batchWriteItem","createTable","deleteItem","deleteTable","describeTable","getItem","listTables","putItem","query","scan","updateItem","updateTable","waitFor"],
+
+    "EC2": ["acceptVpcPeeringConnection", "allocateAddress", "assignPrivateIpAddresses", "associateAddress", "associateDhcpOptions", "associateRouteTable", "attachClassicLinkVpc", "attachInternetGateway", "attachNetworkInterface", "attachVolume", "attachVpnGateway", "authorizeSecurityGroupEgress", "authorizeSecurityGroupIngress", "bundleInstance", "cancelBundleTask", "cancelConversionTask", "cancelExportTask", "cancelImportTask", "cancelReservedInstancesListing", "cancelSpotFleetRequests", "cancelSpotInstanceRequests", "confirmProductInstance", "copyImage", "copySnapshot", "createCustomerGateway", "createDhcpOptions", "createFlowLogs", "createImage", "createInstanceExportTask", "createInternetGateway", "createKeyPair", "createNetworkAcl", "createNetworkAclEntry", "createNetworkInterface", "createPlacementGroup", "createReservedInstancesListing", "createRoute", "createRouteTable", "createSecurityGroup", "createSnapshot", "createSpotDatafeedSubscription", "createSubnet", "createTags", "createVolume", "createVpc", "createVpcEndpoint", "createVpcPeeringConnection", "createVpnConnection", "createVpnConnectionRoute", "createVpnGateway", "deleteCustomerGateway", "deleteDhcpOptions", "deleteFlowLogs", "deleteInternetGateway", "deleteKeyPair", "deleteNetworkAcl", "deleteNetworkAclEntry", "deleteNetworkInterface", "deletePlacementGroup", "deleteRoute", "deleteRouteTable", "deleteSecurityGroup", "deleteSnapshot", "deleteSpotDatafeedSubscription", "deleteSubnet", "deleteTags", "deleteVolume", "deleteVpc", "deleteVpcEndpoints", "deleteVpcPeeringConnection", "deleteVpnConnection", "deleteVpnConnectionRoute", "deleteVpnGateway", "deregisterImage", "describeAccountAttributes", "describeAddresses", "describeAvailabilityZones", "describeBundleTasks", "describeClassicLinkInstances", "describeConversionTasks", "describeCustomerGateways", "describeDhcpOptions", "describeExportTasks", "describeFlowLogs", "describeImageAttribute", "describeImages", "describeImportImageTasks", "describeImportSnapshotTasks", "describeInstanceAttribute", "describeInstances", "describeInstanceStatus", "describeInternetGateways", "describeKeyPairs", "describeMovingAddresses", "describeNetworkAcls", "describeNetworkInterfaceAttribute", "describeNetworkInterfaces", "describePlacementGroups", "describePrefixLists", "describeRegions", "describeReservedInstances", "describeReservedInstancesListings", "describeReservedInstancesModifications", "describeReservedInstancesOfferings", "describeRouteTables", "describeSecurityGroups", "describeSnapshotAttribute", "describeSnapshots", "describeSpotDatafeedSubscription", "describeSpotFleetInstances", "describeSpotFleetRequestHistory", "describeSpotFleetRequests", "describeSpotInstanceRequests", "describeSpotPriceHistory", "describeSubnets", "describeTags", "describeVolumeAttribute", "describeVolumes", "describeVolumeStatus", "describeVpcAttribute", "describeVpcClassicLink", "describeVpcEndpoints", "describeVpcEndpointServices", "describeVpcPeeringConnections", "describeVpcs", "describeVpnConnections", "describeVpnGateways", "detachClassicLinkVpc", "detachInternetGateway", "detachNetworkInterface", "detachVolume", "detachVpnGateway", "disableVgwRoutePropagation", "disableVpcClassicLink", "disassociateAddress", "disassociateRouteTable", "enableVgwRoutePropagation", "enableVolumeIO", "enableVpcClassicLink", "getConsoleOutput", "getPasswordData", "importImage", "importInstance", "importKeyPair", "importSnapshot", "importVolume", "modifyImageAttribute", "modifyInstanceAttribute", "modifyNetworkInterfaceAttribute", "modifyReservedInstances", "modifySnapshotAttribute", "modifySpotFleetRequest", "modifySubnetAttribute", "modifyVolumeAttribute", "modifyVpcAttribute", "modifyVpcEndpoint", "monitorInstances", "moveAddressToVpc", "purchaseReservedInstancesOffering", "rebootInstances", "registerImage", "rejectVpcPeeringConnection", "releaseAddress", "replaceNetworkAclAssociation", "replaceNetworkAclEntry", "replaceRoute", "replaceRouteTableAssociation", "reportInstanceStatus", "requestSpotFleet", "requestSpotInstances", "resetImageAttribute", "resetInstanceAttribute", "resetNetworkInterfaceAttribute", "resetSnapshotAttribute", "restoreAddressToClassic", "revokeSecurityGroupEgress", "revokeSecurityGroupIngress", "runInstances", "startInstances", "stopInstances", "terminateInstances", "unassignPrivateIpAddresses", "unmonitorInstances", "waitFor"],
+
+    "ECS": ["createCluster","createService","deleteCluster","deleteService","deregisterContainerInstance","deregisterTaskDefinition","describeClusters","describeContainerInstances","describeServices","describeTaskDefinition","describeTasks","discoverPollEndpoint","listClusters","listContainerInstances","listServices","listTaskDefinitionFamilies","listTaskDefinitions","listTasks","registerContainerInstance","registerTaskDefinition","runTask","startTask","stopTask","submitContainerStateChange","submitTaskStateChange","updateContainerAgent","updateService"],
+
+    "EMR": ["addInstanceGroups","addJobFlowSteps","addTags","describeCluster","describeJobFlows","describeStep","listBootstrapActions","listClusters","listInstanceGroups","listInstances","listSteps","modifyInstanceGroups","removeTags","runJobFlow","setTerminationProtection","setVisibleToAllUsers","terminateJobFlows"],
+
+    "ElasticTranscoder": ["cancelJob","createJob","createPipeline","createPreset","deletePipeline","deletePreset","listJobsByPipeline","listJobsByStatus","listPipelines","listPresets","readJob","readPipeline","readPreset","testRole","updatePipeline","updatePipelineNotifications","updatePipelineStatus","waitFor"],
+    
+    "ElastiCache": ["addTagsToResource", "authorizeCacheSecurityGroupIngress", "copySnapshot", "createCacheCluster", "createCacheParameterGroup", "createCacheSecurityGroup", "createCacheSubnetGroup", "createReplicationGroup", "createSnapshot", "deleteCacheCluster", "deleteCacheParameterGroup", "deleteCacheSecurityGroup", "deleteCacheSubnetGroup", "deleteReplicationGroup", "deleteSnapshot", "describeCacheClusters", "describeCacheEngineVersions", "describeCacheParameterGroups", "describeCacheParameters", "describeCacheSecurityGroups", "describeCacheSubnetGroups", "describeEngineDefaultParameters", "describeEvents", "describeReplicationGroups", "describeReservedCacheNodes", "describeReservedCacheNodesOfferings", "describeSnapshots", "listTagsForResource", "modifyCacheCluster", "modifyCacheParameterGroup", "modifyCacheSubnetGroup", "modifyReplicationGroup", "purchaseReservedCacheNodesOffering", "rebootCacheCluster", "removeTagsFromResource", "resetCacheParameterGroup", "revokeCacheSecurityGroupIngress"],
+
     "S3": ["abortMultipartUpload", "completeMultipartUpload", "copyObject", "createBucket", "createMultipartUpload", "deleteBucket", "deleteBucketCors", "deleteBucketLifecycle", "deleteBucketPolicy", "deleteBucketReplication", "deleteBucketTagging", "deleteBucketWebsite", "deleteObject", "getBucketAcl", "getBucketCors", "getBucketLifecycle", "getBucketLifecycleConfiguration", "getBucketLocation", "getBucketLogging", "getBucketNotification", "getBucketNotificationConfiguration", "getBucketPolicy", "getBucketReplication", "getBucketRequestPayment", "getBucketTagging", "getBucketVersioning", "getBucketWebsite", "getObject", "getObjectAcl", "getObjectTorrent", "headBucket", "headObject", "listBuckets", "listMultipartUploads", "listObjects", "listObjectVersions", "listParts", "noPresignedContentLength", "putBucketAcl", "putBucketCors", "putBucketLifecycleConfiguration", "putBucketLogging", "putBucketNotification", "putBucketNotificationConfiguration", "putBucketPolicy", "putBucketReplication", "putBucketRequestPayment", "putBucketVersioning", "putBucketWebsite", "putObject", "putObjectAcl", "restoreObject"
-    ]
+    ],
+
+    "Glacier": ["abortMultipartUpload","abortVaultLock","addTagsToVault","completeMultipartUpload","completeVaultLock","createVault","deleteArchive","deleteVault","deleteVaultAccessPolicy","deleteVaultNotifications","describeJob","describeVault","getDataRetrievalPolicy","getJobOutput","getVaultAccessPolicy","getVaultLock","getVaultNotifications","initiateJob","initiateMultipartUpload","initiateVaultLock","listJobs","listMultipartUploads","listParts","listTagsForVault","listVaults","removeTagsFromVault","setDataRetrievalPolicy","setVaultAccessPolicy","setVaultNotifications","uploadArchive","uploadMultipartPart","waitFor"],
+    
+    "Kinesis": ["addTagsToStream","createStream","deleteStream","describeStream","getRecords","getShardIterator","listStreams","listTagsForStream","mergeShards","putRecord","putRecords","removeTagsFromStream","splitShard"],
+    
+    "Redshift": ["authorizeClusterSecurityGroupIngress","authorizeSnapshotAccess","copyClusterSnapshot","createCluster","createClusterParameterGroup","createClusterSecurityGroup","createClusterSnapshot","createClusterSubnetGroup","createEventSubscription","createHsmClientCertificate","createHsmConfiguration","createSnapshotCopyGrant","createTags","deleteCluster","deleteClusterParameterGroup","deleteClusterSecurityGroup","deleteClusterSnapshot","deleteClusterSubnetGroup","deleteEventSubscription","deleteHsmClientCertificate","deleteHsmConfiguration","deleteSnapshotCopyGrant","deleteTags","describeClusterParameterGroups","describeClusterParameters","describeClusters","describeClusterSecurityGroups","describeClusterSnapshots","describeClusterSubnetGroups","describeClusterVersions","describeDefaultClusterParameters","describeEventCategories","describeEvents","describeEventSubscriptions","describeHsmClientCertificates","describeHsmConfigurations","describeLoggingStatus","describeOrderableClusterOptions","describeReservedNodeOfferings","describeReservedNodes","describeResize","describeSnapshotCopyGrants","describeTags","disableLogging","disableSnapshotCopy","enableLogging","enableSnapshotCopy","modifyCluster","modifyClusterParameterGroup","modifyClusterSubnetGroup","modifyEventSubscription","modifySnapshotCopyRetentionPeriod","purchaseReservedNodeOffering","rebootCluster","resetClusterParameterGroup","restoreFromClusterSnapshot","revokeClusterSecurityGroupIngress","revokeSnapshotAccess","rotateEncryptionKey","waitFor"],
+    
+    "RDS": ["addSourceIdentifierToSubscription","addTagsToResource","applyPendingMaintenanceAction","authorizeDBSecurityGroupIngress","copyDBClusterSnapshot","copyDBParameterGroup","copyDBSnapshot","copyOptionGroup","createDBCluster","createDBClusterParameterGroup","createDBClusterSnapshot","createDBInstance","createDBInstanceReadReplica","createDBParameterGroup","createDBSecurityGroup","createDBSnapshot","createDBSubnetGroup","createEventSubscription","createOptionGroup","deleteDBCluster","deleteDBClusterParameterGroup","deleteDBClusterSnapshot","deleteDBInstance","deleteDBParameterGroup","deleteDBSecurityGroup","deleteDBSnapshot","deleteDBSubnetGroup","deleteEventSubscription","deleteOptionGroup","describeAccountAttributes","describeCertificates","describeDBClusterParameterGroups","describeDBClusterParameters","describeDBClusters","describeDBClusterSnapshots","describeDBEngineVersions","describeDBInstances","describeDBLogFiles","describeDBParameterGroups","describeDBParameters","describeDBSecurityGroups","describeDBSnapshots","describeDBSubnetGroups","describeEngineDefaultClusterParameters","describeEngineDefaultParameters","describeEventCategories","describeEvents","describeEventSubscriptions","describeOptionGroupOptions","describeOptionGroups","describeOrderableDBInstanceOptions","describePendingMaintenanceActions","describeReservedDBInstances","describeReservedDBInstancesOfferings","downloadDBLogFilePortion","failoverDBCluster","listTagsForResource","modifyDBCluster","modifyDBClusterParameterGroup","modifyDBInstance","modifyDBParameterGroup","modifyDBSubnetGroup","modifyEventSubscription","modifyOptionGroup","promoteReadReplica","purchaseReservedDBInstancesOffering","rebootDBInstance","removeSourceIdentifierFromSubscription","removeTagsFromResource","resetDBClusterParameterGroup","resetDBParameterGroup","restoreDBClusterFromSnapshot","restoreDBClusterToPointInTime","restoreDBInstanceFromDBSnapshot","restoreDBInstanceToPointInTime","revokeDBSecurityGroupIngress","waitFor"],
+    
+    "Route53": ["associateVPCWithHostedZone","changeResourceRecordSets","changeTagsForResource","createHealthCheck","createHostedZone","createReusableDelegationSet","deleteHealthCheck","deleteHostedZone","deleteReusableDelegationSet","disassociateVPCFromHostedZone","getChange","getCheckerIpRanges","getGeoLocation","getHealthCheck","getHealthCheckCount","getHealthCheckLastFailureReason","getHealthCheckStatus","getHostedZone","getHostedZoneCount","getReusableDelegationSet","listGeoLocations","listHealthChecks","listHostedZones","listHostedZonesByName","listResourceRecordSets","listReusableDelegationSets","listTagsForResource","listTagsForResources","updateHealthCheck","updateHostedZoneComment"],
+    
+    "Route53Domains": ["checkDomainAvailability", "deleteTagsForDomain", "disableDomainAutoRenew", "disableDomainTransferLock", "enableDomainAutoRenew", "enableDomainTransferLock", "getDomainDetail", "getOperationDetail", "listDomains", "listOperations", "listTagsForDomain", "registerDomain", "retrieveDomainAuthCode", "transferDomain", "updateDomainContact", "updateDomainContactPrivacy", "updateDomainNameservers", "updateTagsForDomain"],
+    
+    "SES": ["cloneReceiptRuleSet", "createReceiptFilter", "createReceiptRule", "createReceiptRuleSet", "deleteIdentity", "deleteIdentityPolicy", "deleteReceiptFilter", "deleteReceiptRule", "deleteReceiptRuleSet", "deleteVerifiedEmailAddress", "describeActiveReceiptRuleSet", "describeReceiptRule", "describeReceiptRuleSet", "getIdentityDkimAttributes", "getIdentityNotificationAttributes", "getIdentityPolicies", "getIdentityVerificationAttributes", "getSendQuota", "getSendStatistics", "listIdentities", "listIdentityPolicies", "listReceiptFilters", "listReceiptRuleSets", "listVerifiedEmailAddresses", "putIdentityPolicy", "reorderReceiptRuleSet", "sendBounce", "sendEmail", "sendRawEmail", "setActiveReceiptRuleSet", "setIdentityDkimEnabled", "setIdentityFeedbackForwardingEnabled", "setIdentityNotificationTopic", "setReceiptRulePosition", "updateReceiptRule", "verifyDomainDkim", "verifyDomainIdentity", "verifyEmailAddress", "verifyEmailIdentity", "waitFor"],
+    
+    "SNS": ["addPermission", "confirmSubscription", "createPlatformApplication", "createPlatformEndpoint", "createTopic", "deleteEndpoint", "deletePlatformApplication", "deleteTopic", "getEndpointAttributes", "getPlatformApplicationAttributes", "getSubscriptionAttributes", "getTopicAttributes", "listEndpointsByPlatformApplication", "listPlatformApplications", "listSubscriptions", "listSubscriptionsByTopic", "listTopics", "publish", "removePermission", "setEndpointAttributes", "setPlatformApplicationAttributes", "setSubscriptionAttributes", "setTopicAttributes", "subscribe", "unsubscribe"],
+    
+    "SQS": ["addPermission", "changeMessageVisibility", "changeMessageVisibilityBatch", "createQueue", "deleteMessage", "deleteMessageBatch", "deleteQueue", "getQueueAttributes", "getQueueUrl", "listDeadLetterSourceQueues", "listQueues", "purgeQueue", "receiveMessage", "removePermission", "sendMessage", "sendMessageBatch", "setQueueAttributes"]
+
   },
   "exclude": {
-    "S3": ["methodNameToExclude"]
+    "S3": ["exampleMethodToExclude"]
+  },
+  "versions": {
+    "AutoScaling": "2011-01-01",
+    "CloudFormation": "2010-05-15",
+    "CloudFront": "2014-10-21",
+    "CouldSearch": "2013-01-01",
+    "CloudSearchDomain": "2013-01-01",
+    "CloudWatch": "2010-08-01",
+    "CloudWatchLogs": "2014-03-28",
+    "CognitoIdentity": "2014-06-30",
+    "CognitoSync": "2014-06-30",
+    "DynamoDB": "2012-08-10",
+    "EC2": "2014-10-01",
+    "ECS": "2014-11-13",
+    "EMR": "2009-03-31",
+    "ElasticTranscoder": "2012-09-25",
+    "ElastiCache": "2014-09-30",
+    "Glacier": "2012-06-01",
+    "Kinesis": "2013-12-02",
+    "Redshift": "2012-12-01",
+    "RDS": "2014-09-01",
+    "Route53": "2013-04-01",
+    "Route53Domains": "2014-05-15",
+    "SES": "2010-12-01",
+    "SNS": "2010-03-31",
+    "SQS": "2012-11-05",
+    "S3": "2006-03-01",
+    
+    "SWF": "2012-01-25",
+    "SimpleDB": "2009-04-15",
+    "CloudTrail": "2013-11-01",
+    "CodeDeploy": "2014-10-06",
+    "ConfigService": "2014-11-12",
+    "DataPipeline": "2012-10-29",
+    "DirectConnect": "2012-10-25",
+    "ElasticBeanstalk": "2010-12-01",
+    "IAM": "2010-05-08",
+    "ImportExport": "2010-06-01",
+    "KMS": "2014-11-01",
+    "Lambda": "2014-11-11",
+    "OpsWorks": "2013-02-18",
+    "STS": "2011-06-15",
+    "StorageGateway": "2013-06-30",
+    "Support": "2013-04-15",
+    "ELB": "2012-06-01"
   }
 }

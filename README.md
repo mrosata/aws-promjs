@@ -6,8 +6,6 @@ AWS SDK wrapper which converts the standard AWS API Service methods into functio
 > - If AWS-PromJS doesn't support the Service object your using, just add the service object namespace into  `inc/aws-promjs.json` with an Array containing every method name, or create your own config file in project root `/aws-promjs.json`.
 > - If you don't want a promise returned from a specific method, add that method name to an Array under `exclude &lt;service-name&gt; in a config file.
 
-Right now only S3 returns promises, you can easily turn on other services. I will be updating with a service a day.
-
 ```js
 // Require 'aws-promjs' instead of 'aws-sdk'.
 var AWS = require('aws-promjs');
@@ -30,7 +28,35 @@ s3.createBucket({Bucket: 'Quite spiffy ole chap'})
   });
 ```
 
-As of now there is only the S3 Service setup out the box. However converting new services is as simply as adding their method names to an Array in the `aws-promjs.json` config file. I will be adding new services today and tomorrow.
+This is a list of all the services returning promises out of the box and their version numbers. Most of these are untested at the moment and I could use some help finding any issues. If there is a service not listed here, it will still work the same as it did without `aws-promjs`. If you want to add a service that is not listed here, just follow the same convention used in the `./inc/aws-promjs.json` file, but do so in your own `aws-promjs.json` file within your projects root directory so it doesn't get overwritten on update.
+
+
+> - `AutoScaling`    version:  `[2011-01-01]`.
+> - `CloudFormation`    version:  `[2010-05-15]`.
+> - `CloudFront`    version:  `[2014-10-21]`.
+> - `CouldSearch`    version:  `[2013-01-01]`.
+> - `CloudSearchDomain`    version:  `[2013-01-01]`.
+> - `CloudWatch`    version:  `[2010-08-01]`.
+> - `CloudWatchLogs`    version:  `[2014-03-28]`.
+> - `CognitoIdentity`    version:  `[2014-06-30]`.
+> - `CognitoSync`    version:  `[2014-06-30]`.
+> - `DynamoDB`    version:  `[2012-08-10]`.
+> - `EC2`    version:  `[2014-10-01]`.
+> - `ECS`    version:  `[2014-11-13]`.
+> - `EMR`    version:  `[2009-03-31]`.
+> - `ElasticTranscoder`    version:  `[2012-09-25]`.
+> - `ElastiCache`    version:  `[2014-09-30]`.
+> - `Glacier`    version:  `[2012-06-01]`.
+> - `Kinesis`    version:  `[2013-12-02]`.
+> - `Redshift`    version:  `[2012-12-01]`.
+> - `RDS`    version:  `[2014-09-01]`.
+> - `Route53`    version:  `[2013-04-01]`.
+> - `Route53Domains`    version:  `[2014-05-15]`.
+> - `SES`    version:  `[2010-12-01]`.
+> - `SNS`    version:  `[2010-03-31]`.
+> - `SQS`    version:  `[2012-11-05]`.
+> - `S3`    version:  `[2006-03-01]`
+
 
 ---
 #### Footnotes
@@ -42,7 +68,7 @@ As of now there is only the S3 Service setup out the box. However converting new
 
 #### <i class="icon-refresh"></i> Feel free to contribute lists of method names
 
-Since you should only need a list of the method names in an AWS Service object to convert it. If you compile a list of all the method names in an object feel free to send it over to [mrosata1984@gmail.com] and I will add it. I'd like to create a regex to parse the names from the AWS docs.
+Since you should only need a list of the method names in an AWS Service object to convert it. If you compile a list of all the method names in an object feel free to send it over to [mrosata1984@gmail.com] and I will try to add it.
 
 
 [mrosata1984@gmail.com]:mailto:mrosata1984@gmail.com
