@@ -1,7 +1,7 @@
 {
   "name": "aws-promjs",
-  "version": "0.1.0",
-  "description": "Decorates AWS SDK to use promises while maintaining exact same API as read in aws docs. If a service hasn't been converted to return a promise or excluded then the aws-sdk service will be used instead.",
+  "version": "0.1.1",
+  "description": "Decorates AWS SDK to use promises while maintaining exact same API as read in aws docs. Config available to exclude/add service methods.",
   "main": "aws-promjs.js",
   "scripts": {
     "test": "echo \"Warning: No tests created, I welcome any contributions of test code!\" && exit 1"
