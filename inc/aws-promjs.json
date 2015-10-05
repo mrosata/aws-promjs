@@ -1,0 +1,9 @@
+{
+  "services": {
+    "S3": ["abortMultipartUpload", "completeMultipartUpload", "copyObject", "createBucket", "createMultipartUpload", "deleteBucket", "deleteBucketCors", "deleteBucketLifecycle", "deleteBucketPolicy", "deleteBucketReplication", "deleteBucketTagging", "deleteBucketWebsite", "deleteObject", "getBucketAcl", "getBucketCors", "getBucketLifecycle", "getBucketLifecycleConfiguration", "getBucketLocation", "getBucketLogging", "getBucketNotification", "getBucketNotificationConfiguration", "getBucketPolicy", "getBucketReplication", "getBucketRequestPayment", "getBucketTagging", "getBucketVersioning", "getBucketWebsite", "getObject", "getObjectAcl", "getObjectTorrent", "headBucket", "headObject", "listBuckets", "listMultipartUploads", "listObjects", "listObjectVersions", "listParts", "noPresignedContentLength", "putBucketAcl", "putBucketCors", "putBucketLifecycleConfiguration", "putBucketLogging", "putBucketNotification", "putBucketNotificationConfiguration", "putBucketPolicy", "putBucketReplication", "putBucketRequestPayment", "putBucketVersioning", "putBucketWebsite", "putObject", "putObjectAcl", "restoreObject"
+    ]
+  },
+  "exclude": {
+    "S3": ["methodNameToExclude"]
+  }
+}
