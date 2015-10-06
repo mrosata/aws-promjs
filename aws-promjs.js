@@ -70,6 +70,7 @@ if (!serviceOptions || typeof serviceOptions !== "object") {
 else {
   // This is our AWS extension
   function AWSPromJs() {}
+  AWSPromJs.prototype = AWS;
 
   var services = serviceOptions.services,
       exclusions = (serviceOptions.exclude || {}),
@@ -88,20 +89,17 @@ else {
       serviceExclusions
           = (typeof serviceExclusions === "object" && serviceExclusions.constructor === Array) ? serviceExclusions : [];
       if (AWS.hasOwnProperty(service)) {
-        AWSPromJs[service] = decorate(service, services[service], serviceExclusions);
+        AWSPromJs[service] = decorate(AWSPromJs, service, services[service], serviceExclusions);
       }
     }
   }
 
-  AWSPromJs.constructor = AWS;
-  AWSPromJs.prototype = AWS;
 
   // Extend
   for (prop in AWS) {
     if (AWS.hasOwnProperty(prop) && !AWSPromJs.hasOwnProperty(prop))
       AWSPromJs[prop] = AWS[prop];
   }
-
 
 }
 module.exports = AWSPromJs;

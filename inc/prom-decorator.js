@@ -1,21 +1,14 @@
 var Promise = require("bluebird");
-var AWS = require('aws-sdk');
 var Services = {};
 
 
-function AWSPromJsServiceCreator (name, methodList, exclusions) {
+function AWSPromJsServiceCreator (AWS, name, methodList, exclusions) {
 
   function AWSPromJsService() {
-    if (typeof this.constructor === AWSPromJsService) {
-      // This is being called as a constructor eg: `var s3 = new AWS.S3(config);`
-      this[name] = new AWS[name].apply(AWS[name], arguments);
-
-      return this[name];
-    }
 
     // Create Service if not already created
-    if (typeof Services[name] === "undefined") {
-      this[name] = new AWS[name]();
+    if (typeof this[name] === "undefined") {
+      this[name] = new AWS[name](arguments);
     }
 
     this._awsPromJs = function(methodName, args) {
@@ -59,6 +52,8 @@ function AWSPromJsServiceCreator (name, methodList, exclusions) {
         return _this._awsPromJs.apply(_this, [t, args]);
       };
     });
+
+    // end AWSPromJsService
   }
 
 
@@ -66,12 +61,13 @@ function AWSPromJsServiceCreator (name, methodList, exclusions) {
 }
 
 
-module.exports = function(service, methods, exclusions) {
+module.exports = function(awsWrapper, service, methods, exclusions) {
   exclusions = (typeof exclusions === "object" && exclusions.constructor === Array) ? exclusions : false;
   if (typeof service !== "string")
     return new Error("Function prom-decorator argument 1 should be string. Passed: " + (typeof service));
   if (typeof methods !== "object" || methods.constructor !== Array)
     return new Error("Function prom-decorator argument 2 expected: [object Array], Passed: " + (typeof methods));
 
-  return AWSPromJsServiceCreator(service, methods, exclusions);
+  // awsWrapper.prototype === AWS
+  return AWSPromJsServiceCreator(awsWrapper.prototype, service, methods, exclusions);
 };

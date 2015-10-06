@@ -54,7 +54,7 @@
 
   },
   "exclude": {
-    "S3": ["exampleMethodToExclude"]
+    "S3": ["methodNameToLetBe"]
   },
   "versions": {
     "AutoScaling": "2011-01-01",

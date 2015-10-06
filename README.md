@@ -3,7 +3,6 @@ AWS SDK wrapper which converts the standard AWS API Service methods into functio
 > - The names are the same! The AWS methods names your used to, no changes!
 > - Explicit control through config of which methods return a promise and which don't.
 > - Your setup and AWS configuration doesn't change. It should be identical to your old code. Only service object methods return promises.
-> - If AWS-PromJS doesn't support the Service object your using, just add the service object namespace into  `inc/aws-promjs.json` with an Array containing every method name, or create your own config file in project root `/aws-promjs.json`.
 > - If you don't want a promise returned from a specific method, add that method name to an Array under `exclude &lt;service-name&gt; in a config file.
 
 ```js
@@ -18,14 +17,26 @@ AWS.config.region = 'us-east-1';
 var s3 = new AWS.S3();
 
 // Service method names the same as AWS!
-s3.createBucket({Bucket: 'Quite spiffy ole chap'})
-  // except that they return a promise rather than use callbacks
+var params = {Bucket: 'Ole-Buckethead'};
+var s3bucket = new AWS.S3({params: params});
+
+s3bucket.createBucket(params)
   .then(function(data) {
-    console.log('promise resolved', data)
+    // Extend the params rather then recreate them.
+    params.Key = 'myKey';
+    params.Body = 'Hello!';
+
+    s3bucket.upload(params)
+      .then(function(data) {
+        console.log("Successfully uploaded data to Ole-Buckethead/myKey");
+      })
+      .catch(function(err) {
+        console.log("Error uploading data: ", err);
+      })
   })
   .catch(function(err) {
-    console.log('promise failed', err);
-  });
+    console.log('Error creating bucket!', err);
+  })
 ```
 
 This is a list of all the services returning promises out of the box and their version numbers. Most of these are untested at the moment and I could use some help finding any issues. If there is a service not listed here, it will still work the same as it did without `aws-promjs`. If you want to add a service that is not listed here, just follow the same convention used in the `./inc/aws-promjs.json` file, but do so in your own `aws-promjs.json` file within your projects root directory so it doesn't get overwritten on update.
